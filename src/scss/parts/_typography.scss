@@ -1,0 +1,44 @@
+@import "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css";
+
+@font-face {
+    font-family: 'Cygre';
+    src: url('/fonts/Cygre-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Cygre';
+    src: url('/fonts/Cygre-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Cygre';
+    src: url('/fonts/Cygre-Bold.ttf');
+    font-weight: bold;
+}
+
+body{
+
+    font-family: 'Cygre';
+    font-size: clamp(16px, 2vw, 18px);
+    -webkit-font-smoothing: subpixel-antialiased;
+    line-height: 1.6em;
+    font-size: clamp(16px, 1vw, 18px);
+    color: $text;
+
+    & h1{
+        font-size: clamp(42px, 5vw, 133px);
+        line-height: 1em;
+    }
+
+    & h2{
+        font-size: clamp(32px, 5vw, 64px);
+        line-height: 1.1em;
+    }
+
+    & h3{
+        font-size: clamp(24px, 5vw, 30px);
+        line-height: 1.1em;
+    }
+}

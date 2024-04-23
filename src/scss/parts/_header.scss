@@ -1,0 +1,192 @@
+header{
+
+	padding: 5px 0;
+	margin-top: clamp(0px, 2vw, 60px);
+	position: sticky;
+	top: 0;
+	z-index: 200;
+
+	background-color: rgba(#fff, .7);
+	backdrop-filter: blur(10px);
+
+	& .container{
+
+		display: flex;
+		justify-content: space-between;
+		
+		& .left-links{
+
+			display: flex;
+			align-items: center;
+
+			& .logo{
+
+				display: inline-block;
+				margin-right: 12px;
+		
+				& picture{
+
+					display: flex;
+					align-items: center;
+					width: 217px;
+					justify-content: space-between;
+	
+					& img{
+						display: block;
+					}
+				}
+			}
+		}
+
+		& .right-links{
+
+			display: flex;
+			align-items: center;
+
+			& nav{
+
+				& ul{
+					margin: 0;
+					list-style: none;
+					padding: 0;
+					display: flex;
+
+					& li{
+						
+						& a:not(.bttn){
+							display: block;
+							height: 100%;
+							line-height: 2em;
+							padding: 0 1em;
+							color: $text;
+
+							&.active{
+								color: $accent;
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.icon{
+			color: $accent;
+			font-size: 24px;
+			display: block;
+			margin-left: 12px;
+		}
+		
+		& .burger, & .phone{
+			display: none;
+		}
+
+		& .send-docs-mobile{
+
+			& i{
+				display: none;
+			}
+		}
+
+		& .main-link{
+
+			display: flex;
+			align-items: center;
+
+			& i{
+				font-size: 24px;
+				display: none;
+			}
+		}
+
+		@media(max-width: 1700px){
+
+			& .logo{
+
+				& picture{
+
+					width: auto !important;
+		
+					& img:last-of-type{
+						display: none;
+					}
+				}
+			}
+		}
+
+		@media(max-width: 1480px){
+
+			& .events-cut{
+				display: none;
+			}
+		}
+
+		@media(max-width: 1400px){
+
+			& .phone-cut{
+				display: none;
+			}
+
+			& .phone{
+				display: inline-block;
+			}
+		}
+
+		@media(max-width: 1210px){
+
+			& nav{
+				display: none;
+			}
+
+			& .burger{
+				display: block;
+			}
+		}
+
+		@media(min-width: 1210px){
+
+			& .send-docs-mobile{
+				display: none;
+			}
+		}
+
+		@media(max-width: 600px){
+
+			& .send-docs-mobile{
+				
+				padding: 0 .3em;
+				display: flex;
+				align-items: center;
+				line-height: 2em;
+				height: 2em;
+
+				& i{
+					display: inline;
+					font-size: 24px;
+				}
+
+				& span{
+					display: none;
+				}
+			}
+		}
+
+		@media(max-width: 360px){
+
+			& .main-link{
+
+				padding: 0 .3em;
+				line-height: 2em;
+				height: 2em;
+
+				& span{
+					display: none;
+				}
+
+				& i{
+					display: initial;
+				}
+			}
+		}
+	}
+}

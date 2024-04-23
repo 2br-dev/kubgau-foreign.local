@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include('./parts/head.html')
+</head>
+<body>
+	@@include('./parts/header.html')
+	<main>
+		<section id="hero">
+			<div class="container">
+				<div class="row flex vcenter">
+					<div class="col l6 m12">
+						<div class="hero-content align-center-l-down">
+							<div class="intro">
+								До <span class="primary-text">весёлого студен­чества</span> и начала 
+								<span class="primary-text">профес­сиональ­ного пути</span> осталось
+							</div>
+							<h1>
+								<span class="counter">
+									<span class="val" id="d">00</span>
+									<span class="text">дней</span>
+								</span>
+								<span>:</span>
+								<span class="counter">
+									<span class="val" id="h">00</span>
+									<span class="text">часов</span>
+								</span>
+								<span>:</span>
+								<span class="counter">
+									<span class="val" id="m">00</span>
+									<span class="text">минут</span>
+								</span>
+								<span>:</span>
+								<span class="counter primary-text">
+									<span class="val" id="s">00</span>
+									<span class="text">секунд</span>
+								</span>
+							</h1>
+							<div class="center-align">
+								<a href="#about" class="bttn-large scroll-link">О нас</a>
+							</div>
+						</div>
+					</div>
+					<div class="col xl5 offset-xl1 l6 m6 s8 offset-s2 offset-m3">
+						<div class="parallax-wrapper">
+							<div class="level level-1" data-depth=".5"></div>
+							<div class="level level-2" data-depth="1.5"></div>
+							<div class="level level-3" data-depth="3"></div>
+							<img src="/img/hero-loading.jpg" alt="Студент" width="780" height="1028" class="lazy responsive-img" data-src="/img/hero.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="about">
+			<div class="row flex">
+				<div class="col l10 offset-l1 m12">
+					<h2>О КубГАУ</h2>
+					<p>
+						Кубанский ГАУ - университет современного образования с самым большим и удобным кампусом на Юге России. 
+						На территории в 168 га в черте Краснодара удобно устроились 22 учебно-лабораторных корпуса, 20 общежитий, 
+						прогулочный парк, современный спортивный комплекс с баскетбольными, волейбольными, гандбольными площадками, 
+						бассейном и футбольным полем по стандартам УЕФА.
+					</p>
+				</div>
+				<div class="col l3 m5 s6 xs12 offset-m1 offset-l1">
+					<div class="about-card">
+						<div class="icon">
+							<img data-src="/img/main.jpg" src="/img/icon-loading.jpg" alt="" class="responsive-img lazy" width="60" height="60">
+						</div>
+						<div class="content">
+							<p>
+								<strong>Главный корпус</strong>
+							</p>
+							<p>Университет современного образования с самым большим и удобным кампусом на юге России</p>
+						</div>
+					</div>
+				</div>
+				<div class="col l3 m5 s6 xs12">
+					<div class="about-card">
+						<div class="icon">
+							<img data-src="/img/science.jpg" src="/img/icon-loading.jpg" alt="" class="responsive-img lazy" width="60" height="60">
+						</div>
+						<div class="content">
+							<p>
+								<strong>Научный центр</strong>
+							</p>
+							<p>22 учебных корпуса, оснащённых самой современной техникой</p>
+						</div>
+					</div>
+				</div>
+				<div class="col l4 m5 s6 xs12 offset-m1">
+					<div class="about-card">
+						<div class="icon">
+							<img data-src="/img/sport.jpg" src="/img/icon-loading.jpg" alt="" class="responsive-img lazy" width="60" height="60">
+						</div>
+						<div class="content">
+							<p>
+								<strong>Спортивный комплекс</strong>
+							</p>
+							<p>с футбольным полем по стандартам UEFA, бассейном, баскетбольными, волейбольными и гандбольными площадками</p>
+						</div>
+					</div>
+				</div>
+				<div class="col l3 m5 s6 xs12 offset-l3">
+					<div class="about-card">
+						<div class="icon">
+							<img data-src="/img/creative.jpg" src="/img/icon-loading.jpg" alt="" class="responsive-img lazy" width="60" height="60">
+						</div>
+						<div class="content">
+							<p>
+								<strong>Центр творчества</strong>
+							</p>
+							<p>44 студии для развития творческого потенциала студентов из разных стран</p>
+						</div>
+					</div>
+				</div>
+				<div class="col l3 m6 s6 offset-s3 xs12 offset-m3">
+					<div class="about-card">
+						<div class="icon">
+							<img data-src="/img/studhome.jpg" src="/img/icon-loading.jpg" alt="" class="responsive-img lazy" width="60" height="60">
+						</div>
+						<div class="content">
+							<p>
+								<strong>Студ.городок</strong>
+							</p>
+							<p>20 общежитий, жильём обеспечены 100% обучающихся</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="map-3d">
+				<div class="label" id="sport"><img class="lazy" data-src="/img/sport-flat.svg"  src="/img/icon-loading.jpg" alt=""><span>Спортивный комплекс</span></div>
+				<div class="label" id="science"><img class="lazy" data-src="/img/science-flat.svg" src="/img/icon-loading.jpg" alt=""><span>Научный центр</span></div>
+				<div class="label" id="main"><img class="lazy" data-src="/img/main-flat.svg" src="/img/icon-loading.jpg" alt=""><span>Главный корпус</span></div>
+				<div class="label" id="creative"><img class="lazy" data-src="/img/creative-flat.svg" src="/img/icon-loading.jpg" alt=""><span>Центр творчества</span></div>
+				<div class="label" id="stud-house"><img class="lazy" data-src="/img/home-flat.svg" src="/img/icon-loading.jpg" alt=""><span>Студгородок</span></div>
+				<img src="/img/map-loading.jpg" alt="" class="lazy responsive-img map-desktop" data-src="/img/3dmap.jpg">
+				<img src="/img/map-mobile-loading.jpg" alt="" class="lazy responsive-img map-mobile" data-src="/img/3dmap-mobile.jpg">
+			</div>
+		</section>
+		<section id="faculties">
+			<div class="container">
+				<div class="row flex">
+					<div class="col l6 faculty-wrapper order-l1">
+						<div class="faculty-content">
+							<h2>Факультеты</h2>
+							<p>В КубГАУ вы обязательно найдете любимое дело всей жизни!</p>
+							<h3 style="--icon: url(/img/pow.svg)">Биологические факультеты</h3>
+							<ul class="browser-default" data-faculty="biologist">
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/agronomicheskiy/">Агрономии и экологии</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/agrokhimii/">Агрохимии и защиты растений</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/veterinarnoy-meditsiny/">Ветеринарной медицины</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/zootekhnologicheskiy/">Зоотехнии</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/pishchevykh-proizvodstv-i-biotekhnologiy/">Пищевых производств и биотехнологий</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/plodoovoshchevodstva/">Плодоовощеводства и виноградарства</a></li>
+							</ul>
+							<h3 style="--icon: url(/img/gears.svg)">Инженерные факультеты</h3>
+							<ul class="browser-default" data-faculty="engineer">
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/stroitelnyy/">Архитектурно-строительный</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/vodnogo-khozyaystva/">Гидромелиорации</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/zemleustroitelnyy/">Землеустроительный</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/mekhanizatsii/">Механизации</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/prikladnoy-informatiki/">Прикладной информатики</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/elektrifikatsii/">Энергетики</a></li>
+							</ul>
+							<h3 style="--icon: url(/img/group.svg)">Гуманитарные факультеты</h3>
+							<ul class="browser-default" data-faculty="lawer">
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/upravleniya/">Управления</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/uchetno-finansovyy/">Учетно-финансовый</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/finansov-i-kredita/">Финансы и кредит</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/ekonomicheskiy/">Экономический</a></li>
+								<li><a target="_blank" href="https://kubsau.ru/education/faculties/yuridicheskiy/">Юридический</a></li>
+								<li><a target="_blank" href="http://cifrek.kubsau.tilda.ws/about">Институт цифровой экономики и инноваци</a></li>
+							</ul>
+							<div class="call2action">
+								<a href="" class="bttn modal-trigger" id="send-docs">Подать документы</a>
+							</div>
+						</div>
+					</div>
+					<div class="col l6 no-padding">
+						<div class="image-wrapper">
+							<img id="faculty-image" data-src="/img/biologist.jpg" src="/img/faculty-loading.jpg" alt="" class="lazy responsive-img hide-l-down" width="940" height="1059">
+							<img id="faculty-tablet-image" data-src="/img/biologist-tablet.jpg" src="/img/faculty-mobile-loading.jpg" alt="" class="lazy responsive-img hide-l-up" width="940" height="533">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="howto" class="primary">
+			<div class="container">
+				<div class="row">
+					<div class="col xl10 l12 offset-xl1 m12">
+						<div class="howto-banner row flex">
+							<div class="col l6 m6 s12 banner-content-wrapper order-m1">
+								<div class="banner-content">
+										<h2>Как поступить?</h2>
+										<p>Маршрут поступления быстрее, чем кажется</p>
+										<ol>
+											<li><span class="num"></span>Выбери направление подготовки и подай документы онлайн</li>
+											<li><span class="num"></span>Сдай вступительные испытания: очно или дистанционно</li>
+											<li><span class="num"></span>Найди себя в приказе на поступление!</li>
+										</ol>
+								</div>
+							</div>
+							<div class="col l6 m6 s12 no-padding">
+								<div class="image-wrapper">
+									<img data-src="/img/howto.jpg" src="/img/howto-loading.jpg" class="responsive-img lazy" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col l10 offset-l1 m12 center-align white-text">
+						<p>
+							Приятный момент: вы можете поступить к нам не только на контрактной основе, но и на бюджетное (бесплатное) место! 
+							Согласно Постановлению Правительства РФ от 18 декабря 2020 г. № 2150, Федеральному закону от 24 мая 1999 
+							г. № 99-ФЗ и иным Соглашениям и международным договоренностям РФ иностранные граждане, лица без гражданства, 
+							а также соотечественники ближнего и дальнего зарубежья имеют право обучаться за счет бюджетных ассигнований 
+							федерального бюджета. Главное - иметь уровень образования, соответствующий российскому среднему (полному) 
+							общему или среднему профессиональному образованию.
+						</p>
+						<p>
+							Какие документы необходимы для поступления? Всё в удобной памятке!
+						</p>
+						<p>
+							<a href="" class="bttn">Скачать (PDF)</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="events-calendar" class="lazy parallax" data-bg="/img/parallax.jpg">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 center-align">
+						<h2>Календарь событий</h2>
+						<div class="calendar-wrapper"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="video">
+			<div class="container">
+				<div class="row flex video-row">
+					<div class="col l3 order-l1 m6 offset-m1">
+						<h3 class="align-center-m-down">Всё для учёбы и творчества</h3>
+						<p class="mobile-text align-center-m-down">
+							В КубГАУ созданы идеальные условия как для науки, так и для искусства: действуют 44 творческие секции, 
+							медиа-центр и современная лаборатория цифрового контента.
+						</p>
+					</div>
+					<div class="col l4 offset-l1 m5 s6 offset-s3 xs8 offset-xs2 t12">
+						<video data-src="/video/circle-video.mp4" autoplay muted playsinline loop class="lazy"></video>
+					</div>
+					<div class="col l3 offset-l1 hide-l-down">
+						<p class="desktop-text">
+							В КубГАУ созданы идеальные условия как для науки, так и для искусства: действуют 44 творческие секции, 
+							медиа-центр и современная лаборатория цифрового контента.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="gallery">
+			<div class="row">
+				<div class="col s12 center-align">
+					<h2>Галерея</h2>
+				</div>
+			</div>
+			<div class="masonry-container">
+				<img data-src="/img/gallery/studio.jpg" src="/img/gallery-v-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/copter.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/student2.jpg" src="/img/gallery-v-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/foreign1.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/lab.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/student3.jpg" src="/img/gallery-v-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/foreign2.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/teacher.jpg" src="/img/gallery-v-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/teacher3.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/machinery.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/student.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/auditory.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/univercity.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/lab3.jpg" src="/img/gallery-v-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/alley.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/teacher2.jpg" src="/img/gallery-v-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/lab4.jpg" src="/img/gallery-v-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/meeting.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/student4.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+				<img data-src="/img/gallery/lab2.jpg" src="/img/gallery-h-loading.jpg" alt="" class="lazy responsive-img gallery-image">
+
+			</div>
+		</section>
+		<section id="contacts">
+			<div class="row flex no-margin">
+				<div class="col xl5 l12 s12 no-padding primary white-text">
+					<div class="contacts-content">
+						<h2>Остались вопросы?</h2>
+						<p>С радостью ответим!</p>
+						<div class="contacts">
+							@@loop('./parts/contact.html', './data/contacts.json')
+						</div>
+					</div>
+				</div>
+				<div class="col xl7 l12 s12 no-padding">
+					<div id="map" data-lonlat="45.042228, 38.922654" data-zoom="17" data-address="г. Краснодар, ул. Калинина, 13<br> Учебный корпус зоотехнического университета" data-link="https://yandex.ru/maps/-/CDVbi4JT"></div>
+				</div>
+			</div>
+		</section>
+		<section id="in-touch">
+			<div class="container">
+				<div class="row center-align">
+					<div class="col s12">
+						<h2>Не пропусти начало приёма!</h2>
+						<p>А лучше оставь свои контактные данные и мы напомним СМС-сообщением о старте день в день.</p>
+					</div>
+				</div>
+				<form class="row flex row-center center-align" id="subscribe">
+					<div class="col l4 m6 s12">
+						<div class="input-field"><input name="lastname" type="text" placeholder="Фамилия"><label for="">Фамилия</label></div>
+					</div>
+					<div class="col l4 m6 s12">
+						<div class="input-field"><input name="firstname" type="text" placeholder="Имя"><label for="">Имя</label></div>
+					</div>
+					<div class="col l4 m6 s12">
+						<div class="input-field"><input name="middlename" type="text" placeholder="Отчество"><label for="">Отчество</label></div>
+					</div>
+					<div class="col l4 m6 s12">
+						<div class="input-field"><input name="phone" type="text" placeholder="Телефон"><label for="">Телефон</label></div>
+					</div>
+					<div class="col l4 m6 s12">
+						<div class="input-field"><input name="email" type="text" placeholder="E-mail"><label for="">E-mail</label></div>
+					</div>
+					<div class="col s12">
+						<p>
+							<input type="submit" class="bttn-large" value="Подписаться">
+						</p>
+					</div>
+					<div class="col s12">
+						<p>Используя эту форму, вы соглашаетесь на сбор и обработку персональных данных в соответствии с <a href="https://www.consultant.ru/document/cons_doc_LAW_61801/" target="_blank" rel="nofollow">Федеральным законом 152-ФЗ</a></p>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+	@@include( './parts/footer.html' )
+	<script src="/js/master.js"></script>
+</body>
+</html>

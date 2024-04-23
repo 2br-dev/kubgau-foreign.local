@@ -1,0 +1,93 @@
+body{
+
+	& main{
+		position: relative;
+		z-index: 0;
+	}
+
+	& .primary{
+		background-color: $primary;
+	}
+
+	& .primary-text{
+		color: $primary;
+	}
+
+	& .no-margin{
+		margin: 0;
+	}
+
+	& .bttn{
+		background-color: $accent;
+		border-radius: 2em;
+		color: #fff;
+		line-height: 2em;
+		display: inline-block;
+		padding: 0 1em;
+		transition: background-color .2s;
+		border: 0;
+		cursor: pointer;
+		font-family: 'Cygre', sans-serif;
+
+		&:hover{
+			background-color: lighten($accent, 15);
+		}
+
+		&-outline{
+			@extend .bttn;
+			box-shadow: 0 0 0 1px $accent inset;
+			color: $accent;
+			background-color: transparent;
+
+			&:hover{
+				background-color: rgba($accent, .1);
+			}
+		}
+
+		&-large{
+			@extend .bttn;
+			font-size: clamp(18px, 2vw, 26px);
+		}
+
+	}
+
+	& .row-center{
+		justify-content: center;
+	}
+
+	& .responsive{
+		max-width: 100%;
+	}
+
+	& .input-field{
+		display: flex;
+		flex-direction: column-reverse;
+		text-align: left;
+		margin-bottom: $gutter-width;
+
+		& label{
+			font-size: clamp(12px, 2vw, 14px);
+		}
+
+		& input{
+			font-family: 'Cygre', sans-serif;
+			font-size: clamp(18px, 3vw, 26px);
+			line-height: 2em;
+			padding: 0 .7em;
+			border: 1px solid #e5e5e5;
+			border-radius: 2em;
+			background-color: #fafafa;
+			border-radius: 59px;
+			box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1) inset;
+			caret-color: $accent;
+
+			&:focus{
+				outline-color: $accent;
+			}
+
+			&::placeholder{
+				color: #C6C6C6;
+			}
+		}
+	}
+}

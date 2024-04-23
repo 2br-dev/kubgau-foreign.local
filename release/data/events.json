@@ -1,0 +1,170 @@
+{
+	"diapasone": [
+		{
+			"dates": [
+				{
+					"date": "20.07",
+					"classname": "single",
+					"events": {
+						"left": {
+							"classname": "event-left",
+							"description": "Магистратура: очно, заочно / бюджет, контракт",
+							"title": "Начало приёма  документов"
+						},
+						"right": {
+							"classname": "event-right",
+							"description": "Бакалавриат: очно, очно-заочно, заочно / бюджет, контракт",
+							"title": "Начало приёма  документов"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "25.07",
+					"classname": "single",
+					"events": {
+						"right": {
+							"classname" : "event-right",
+							"description": "Магистратура: очно, заочно / бюджет, контракт",
+							"title": "Завершение приема документов по результатам ЕГЭ"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "31.07",
+					"classname": "single",
+					"events": {
+						"left": {
+							"classname": "event-left",
+							"description": "Магистратура: очно, заочно / бюджет, контракт",
+							"title": "Завершение приема документов по результатам ЕГЭ"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "3.08 12:00",
+					"classname": "single",
+					"events": {
+						"right": {
+							"classname": "event-right",
+							"description": "Бакалавриат: очно, заочно / бюджет, контракт",
+							"title": "Завершение приема оригиналов документов об образовании"
+						}
+					}
+				},
+				{
+					"date": "4.08-09.08",
+					"classname": "diapasone-entry",
+					"events": {
+						"left": {
+							"classname": "event-left",
+							"description": "Бакалавриат: очно, очно-заочно, заочно / бюджет",
+							"title": "Приказ о зачислении"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "5.08",
+					"classname": "single in-diapasone",
+					"events": {
+						"right": {
+							"classname": "event-right",
+							"description": "Бакалавриат: очно, очно-заочно, заочно / контракт",
+							"title": "Завершение приема документов с прохождением внутренних вступительных испытаний"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "12.08",
+					"classname": "single",
+					"events": {
+						"left": {
+							"classname": "event-left",
+							"description": "Магистратура: очно, заочно / бюджет",
+							"title": "Прием оригиналов документов об образовании"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "14.08 до 16:00",
+					"classname": "single",
+					"events": {
+						"right": {
+							"classname": "event-right",
+							"description": "Магистратура: очно, заочно / бюджет",
+							"title": "Приказ о зачислении"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "17.08",
+					"classname": "single",
+					"events": {
+						"left": {
+							"classname": "event-left",
+							"description": "Магистратура: очно, заочно / контракт",
+							"title": "Приказ о зачислении"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "20.08",
+					"classname": "single",
+					"events": {
+						"right": {
+							"classname": "event-right",
+							"description": "Бакалавриат: очно / контракт",
+							"title": "Приказ о зачислении"
+						}
+					}
+				}
+			]
+		},
+		{
+			"dates": [
+				{
+					"date": "27.08",
+					"classname": "single",
+					"events": {
+						"left": {
+							"classname": "event-left",
+							"description": "Бакалавриат: очно-заочно, заочно / контракт",
+							"title": "Приказ о зачислении"
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,84 @@
+[
+	{
+		"image": "/img/algasheva.jpg",
+		"lastName": "Алгашева",
+		"fullName": "Лариса Владимировна",
+		"rank": "Заместитель начальника управления по международным связям",
+		"responsability": "Решение вопросов, связанных с поступлением",
+		"phones": [
+			{
+				"icon": "bx bxs-phone",
+				"text": "+7 (861) 221-57-76",
+				"link": "tel:+78612215776"
+			},
+			{
+				"icon": "bx bxs-phone",
+				"text": "+7 (952) 851-45-91",
+				"link": "tel:+79528514591"
+			},
+			{
+				"icon": "bx bxl-whatsapp",
+				"text": "WhatsApp",
+				"link": "https://wa.me/+79528514591"
+			},
+			{
+				"icon": "bx bxl-telegram",
+				"text": "Telegram",
+				"link": "https://t.me/+79528514591"
+			}
+		],
+		"addresses": [
+			{
+				"icon": "bx bxs-envelope-open",
+				"text": "inter_kubsau@mail.ru",
+				"link": "mailto:inter_kubsau@mail.ru"
+			},
+			{
+				"icon": "bx bxs-map",
+				"text": "350044, Россия, г. Краснодар, ул. Калинина, д. 13, учебный корпус зооинженерного факультета, ауд. 317",
+				"link": "https://yandex.ru/maps/-/CDBXiUOK"
+			}
+		]
+	},
+	{
+		"image": "/img/valikova.jpg",
+		"lastName": "Валикова",
+		"fullName": "Наталья Николаевна",
+		"rank": "Начальник центра по работе с иностранными студентами",
+		"responsability": "Решение организационных вопросов",
+		"phones": [
+			{
+				"icon": "bx bxs-phone",
+				"text": "+7 (861) 221-57-76",
+				"link": "tel:+78612215776"
+			},
+			{
+				"icon": "bx bxs-phone",
+				"text": "+7 (918) 298-67-94",
+				"link": "tel:+79182986794"
+			},
+			{
+				"icon": "bx bxl-whatsapp",
+				"text": "WhatsApp",
+				"link": "https://wa.me/+79182986794"
+			},
+			{
+				"icon": "bx bxl-telegram",
+				"text": "Telegram",
+				"link": "https://t.me/+79182986794"
+			}
+		],
+		"addresses": [
+			{
+				"icon": "bx bxs-envelope-open",
+				"text": "2215776@mail.ru",
+				"link": "mailto:2215776@mail.ru"
+			},
+			{
+				"icon": "bx bxs-map",
+				"text": "350044, Россия, г. Краснодар, ул. Калинина, д. 13, учебный корпус зооинженерного факультета, ауд. 317",
+				"link": "https://yandex.ru/maps/-/CDBXiUOK"
+			}
+		]
+	}
+]

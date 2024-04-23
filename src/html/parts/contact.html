@@ -1,0 +1,26 @@
+<div class="contact-card">
+	<div class="contact-intro">
+		<div class="contact-image">
+			<img data-src="@@image" src="/img/avatar-loading.jpg" alt="" class="responsive-img lazy">
+		</div>
+		<div class="contact-data">
+			<div class="last-name">@@lastName</div>
+			<div class="full-name">@@fullName</div>
+			<div class="rank">@@rank</div>
+			<div class="responsability">@@responsability</div>
+		</div>
+	</div>
+	<div class="card-divider"></div>
+	<div class="contacts-list">
+		<ul class="phones">
+			@@for(let i=0; i<phones.length; i++) {
+				<li><a class=" white-text" href="` + phones[i].link + `"><i class="` + phones[i].icon + `"></i><span>` + phones[i].text + `</span></a></li>
+			}
+		</ul>
+		<ul class="addresses">
+			@@for(let i=0; i<addresses.length; i++) {
+				<li><a class=" white-text" href="` + addresses[i].link + `"><i class="` + addresses[i].icon + `"></i><span>` + addresses[i].text + `</span></a></li>
+			}			
+		</ul>
+	</div>
+</div>
