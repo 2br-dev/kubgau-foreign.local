@@ -10,11 +10,37 @@ import TinyParallax from './lib/tinyparallax';
 import Zoomer, { IZoomerOptions } from './lib/zoomer';
 
 declare const ymaps:any; // Переменная для хранения Яндекс-карт
+declare const YT:any; //Переменная для хранения API Youtube
+let player:any;
 
 /**
  * Инициализация
  */
 document.addEventListener('DOMContentLoaded', function() {
+
+	// Загрузка Youtube видео в модалку
+	let tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	let firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	(window as any).onYouTubeIframeAPIReady = () => {
+		player = new YT.Player('player', {
+			width: 1200,
+			height: 800,
+			videoId:  'TOEyes0VEi4'
+		})
+	};
+
+	// Modal
+	M.Modal.init(document.querySelectorAll('.modal'), {
+		onOpenStart: () => {
+			player.playVideo();
+		},
+		onCloseEnd: () => {
+			player.stopVideo();
+		}
+	});
 
 	// Zoomer
 	let zoomeroptions:IZoomerOptions = {
@@ -40,9 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	const parallax = new MouseParallax(options);
 
 	// Маска для телефона
-	IMask(<HTMLElement>document.querySelector('[name="phone"]'), {
-        mask: '+{7} (000) 000-00-00', 
-    });
+	// IMask(<HTMLElement>document.querySelector('[name="phone"]'), {
+    //     mask: '+{7} (000) 000-00-00', 
+    // });
 
 	// Запуск обратного отсчёта
 	startCounter();
@@ -97,8 +123,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 
 	$('body').on('click', '.scroll-link', scrollTo);
-	$('body').on('mouseenter', '#faculties li a', setImage);
+	// $('body').on('mouseenter', '#faculties li a', setImage);
 	$('body').on('submit', '#subscribe', subscribe);
+	$('body').on('submit', '#modal-subscribe', subscribe);
 
 	document.querySelectorAll('section').forEach((section:HTMLElement) => {
 		let observer = new IntersectionObserver(intersect, {
@@ -113,8 +140,11 @@ document.addEventListener('DOMContentLoaded', function() {
  * Отправка формы подписки
  */
 function subscribe(e:JQuery.SubmitEvent){
+	
 	e.preventDefault();
+	
 	let form = <HTMLFormElement>e.currentTarget;
+	let modal = M.Modal.getInstance(form);
 	let action = form.attributes['action'];
 
 	// Если указан атрибут action, то делаем запрос на сервер
@@ -126,6 +156,7 @@ function subscribe(e:JQuery.SubmitEvent){
 			dataType: "json",
 			success: (response:any)=>{
 				// Callback при успешной отправке формы
+				modal?.close();
 			},
 			error: (error:any) => {
 				// Callback при ошибке отправки формы
@@ -133,26 +164,27 @@ function subscribe(e:JQuery.SubmitEvent){
 		})
 	}else{
 		// Иначе возвращаем заглушку (сообщение об успешной отправке формы)
+		modal?.close();
 		M.toast({"html": "Спасибо за ваш интерес к нашему университету! Мы обязательно уведомим Вас о начале приёма документов!"})
 	}
 
 	form.reset();
 }
 
-/**
- * Установка изображения в зависимости от факультета при наведении мыши
- */
-function setImage(e:JQuery.MouseEnterEvent){
-	let el:HTMLElement = e.currentTarget;
-	let list = <HTMLElement>$(el).parents('ul')[0];
-	let image = list.dataset['faculty'];
+// /**
+//  * Установка изображения в зависимости от факультета при наведении мыши
+//  */
+// function setImage(e:JQuery.MouseEnterEvent){
+// 	let el:HTMLElement = e.currentTarget;
+// 	let list = <HTMLElement>$(el).parents('ul')[0];
+// 	let image = list.dataset['faculty'];
 
-	let desktopImage = <HTMLImageElement>document.querySelector('#faculty-image');
-	let tabletImage = <HTMLImageElement>document.querySelector('#faculty-tablet-image');
+// 	let desktopImage = <HTMLImageElement>document.querySelector('#faculty-image');
+// 	let tabletImage = <HTMLImageElement>document.querySelector('#faculty-tablet-image');
 
-	desktopImage.src = `/img/${image}.jpg`;
-	tabletImage.src=`/img/${image}-tablet.jpg`;
-}
+// 	desktopImage.src = `/img/${image}.jpg`;
+// 	tabletImage.src=`/img/${image}-tablet.jpg`;
+// }
 
 /**
  * Обработка пересечений

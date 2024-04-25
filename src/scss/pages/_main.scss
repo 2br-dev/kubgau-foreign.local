@@ -109,12 +109,26 @@ main{
 
 			background-color: $fogged;
 
+			& h2{
+				margin: 0;
+			}
+
+			& .about-intro{
+				font-size: clamp(16px, 3vw, 24px);
+				line-height: 1.4em;
+				color: #777;
+			}
+
 			& .col{
 
 				& .about-card{
 
 					& .content{
 						padding-left: clamp(0px, 3vw, 80px);
+
+						@media(max-width: $medium){
+							padding-left: 0;
+						}
 					}
 
 					& img{
@@ -224,6 +238,48 @@ main{
 						}
 					}
 				}
+
+				& .bttn-youtube{
+					@extend .bttn-large;
+					position: relative;
+					position: absolute;
+					bottom: 3vmax;
+					left: 50%;
+					transform: translateX(-50%);
+					padding-left: 2.5em !important;
+					box-shadow: 0 0 0 4px #fff;
+					white-space: nowrap;
+					transition: background-color .2s, box-shadow .2s;
+
+					& i{
+						font-size: 1.05em;
+						position: relative;
+						position: absolute;
+						display: block;
+						left: 2px;
+						top: 2px;
+						height: calc(100% - 4px);
+						aspect-ratio: 1 / 1;
+						text-align: center;
+						line-height: 1.8em;
+
+						&:after{
+							content: '';
+							display: block;
+							position: absolute;
+							width: .5px;
+							height: 70%;
+							right: 0;
+							top: 50%;
+							transform: translateY(-50%);
+							background-image: linear-gradient(to bottom, rgba(#fff, 0), rgba(#fff, 1), rgba(#fff, 0));
+						}
+					}
+
+					& span{
+						font-size: clamp(16px, 2vw, 18px);
+					}
+				}
 			}
 		}
 
@@ -303,7 +359,7 @@ main{
 							padding: 0 10px;
 							border-radius: 4px;
 							transition: background-color .2s;
-							color: $text;
+							color: $accent;
 
 							&::before{
 								content: "";
@@ -464,6 +520,7 @@ main{
 					display: block;
 					width: 100%;
 					height: 100%;
+					object-position: 65% 0;
 					object-fit: cover;
 				}
 			}
@@ -679,6 +736,17 @@ main{
 					}
 				}
 			}
+
+			@media(max-width: $medium){
+				
+				& .date-bullet{
+					opacity: 1 !important;
+				}
+
+				& .event-content{
+					box-shadow: none !important;
+				}
+			}
 		}
 
 		&#video{
@@ -735,6 +803,11 @@ main{
 
 			& h2{
 				margin: 0;
+				line-height: 1em;
+			}
+
+			& p{
+				margin-bottom: clamp(20px, 2vw, 60px);
 			}
 
 			& .contacts-content{
@@ -753,13 +826,14 @@ main{
 
 					& .contact-card{
 	
-						margin-top: 60px;
+						// margin-top: 60px;
 						margin-right: $gutter-width;
 	
 						& .contact-intro{
 	
 							display: flex;
 							align-items: center;
+							margin-bottom: $gutter-width;
 	
 							& .contact-image{
 								width: 35%;
@@ -817,12 +891,6 @@ main{
 							}
 						}
 	
-						& .card-divider{
-							width: 50%;
-							border-top: 1px solid rgba(#fff, .5);
-							margin: 40px 0;
-						}
-	
 						& .contacts-list{
 
 							display: flex;
@@ -833,8 +901,13 @@ main{
 
 	
 							& .phones{
+
 								width: calc(35% + #{$gutter-width});
 								flex-shrink: 0;
+
+								& li{
+									white-space: nowrap;
+								}
 							}
 	
 							& i{
@@ -852,6 +925,20 @@ main{
 							@media(max-width: 600px){
 								flex-direction: column;
 							}
+						}
+					}
+
+					& .card-divider{
+						width: 50%;
+						border-top: 1px solid rgba(#fff, .5);
+						margin: 40px 0;
+
+						&:last-of-type{
+							display: none;
+						}
+
+						@media(max-width: $extra-large) and (min-width: $medium){
+							display: none;
 						}
 					}
 				}
@@ -898,6 +985,26 @@ main{
 					color: $accent;
 				}
 			}
+		}
+	}
+}
+
+#video-preview{
+
+	max-width: 1200px;
+
+	& .video-wrapper{
+
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		position: relative;
+
+		& iframe{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 		}
 	}
 }

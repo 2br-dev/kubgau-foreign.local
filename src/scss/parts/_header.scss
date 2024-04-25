@@ -60,6 +60,7 @@ header{
 							padding: 0 1em;
 							color: $text;
 
+
 							&.active{
 								color: $accent;
 								text-decoration: underline;
@@ -99,7 +100,7 @@ header{
 			}
 		}
 
-		@media(max-width: 1700px){
+		@media(max-width: 1820px){
 
 			& .logo{
 

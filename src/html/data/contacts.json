@@ -20,11 +20,6 @@
 				"icon": "bx bxl-whatsapp",
 				"text": "WhatsApp",
 				"link": "https://wa.me/+79528514591"
-			},
-			{
-				"icon": "bx bxl-telegram",
-				"text": "Telegram",
-				"link": "https://t.me/+79528514591"
 			}
 		],
 		"addresses": [

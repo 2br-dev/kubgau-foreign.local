@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "clear && gulp watch",
-    "build": "clear && gulp build && optimizt ./release/img/"
+    "build": "clear && optimizt ./release/img/ && gulp build"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.29",

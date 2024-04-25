@@ -49,6 +49,16 @@ body{
 			font-size: clamp(18px, 2vw, 26px);
 		}
 
+		&-flat{
+			@extend .bttn;
+			background-color: transparent;
+			color: $accent;
+
+			&:hover{
+				color: $accent;
+				background-color: rgba(black, 0.05);
+			}
+		}
 	}
 
 	& .row-center{
@@ -88,6 +98,36 @@ body{
 			&::placeholder{
 				color: #C6C6C6;
 			}
+		}
+	}
+
+	& .modal{
+
+		max-width: 800px;
+
+		& .modal-header{
+
+			display: flex;
+			justify-content: space-between;
+			background-color: #fafafa;
+
+			& a{
+				font-size: 26px;
+				color: $text;
+			}
+		}
+
+		& .input-field{
+
+			& input{
+				font-size: clamp(16px, 2vw, 18px);
+			}
+		}
+
+		& .modal-footer{
+			border-top: 1px solid #ddd;
+			padding: 10px;
+			box-sizing: border-box;
 		}
 	}
 }
