@@ -165,6 +165,9 @@ export default class Zoomer{
 		zoomWrap.addEventListener('mousedown', this.startDrag.bind(this));
 		zoomWrap.addEventListener('mouseup', this.endDrag.bind(this));
 		zoomWrap.addEventListener('mousemove', this.drag.bind(this));
+		zoomWrap.addEventListener('touchstart', this.startTouch.bind(this));
+		zoomWrap.addEventListener('touchend', this.endTouch.bind(this));
+		zoomWrap.addEventListener('touchmove', this.touchMove.bind(this));
 		zoomWrap.appendChild(prevWrapper);
 		zoomWrap.appendChild(currentWrapper);
 		zoomWrap.appendChild(nextWrapper);
@@ -182,6 +185,37 @@ export default class Zoomer{
 		if(this.isAnimating) return;
 		this.dragStartX = e.pageX;
 		this.isDragging = true;
+	}
+	/** Начало перетаскивания касанием */
+	private startTouch(e:TouchEvent):void{
+		if(this.isAnimating) return;
+		let touchObj = e.changedTouches.item(0);
+		this.dragStartX = touchObj.clientX;
+		this.isDragging = true
+	}
+	/** Завершение перетаскивания касанием */
+	private endTouch(e:TouchEvent):void{
+		this.isDragging = false;
+		if(this.dragOffset == 0) return;
+		let from = this.wrapper.scrollLeft;
+		if(Math.abs(this.dragOffset) > 30){
+			if(this.dragOffset > 0) {
+				this.next();
+			}else{
+				this.prev();
+			}
+		}else{
+			this.animate(from, this.slideWidth, () => {
+				this.isAnimating = false;
+				this.dragOffset = 0;
+			})
+		}
+	}
+	private touchMove(e: TouchEvent): void {
+		if (!this.isDragging) return;
+		this.dragOffset = this.dragStartX - e.changedTouches[0].clientX;
+		let currentX = this.dragOffset + this.slideWidth;
+		this.wrapper.scrollLeft = currentX;
 	}
 	/** Конец перетаскивания */
 	private endDrag():void{
@@ -201,6 +235,7 @@ export default class Zoomer{
 			})
 		}
 	}
+	
 	/** Процесс перетаскивания */
 	private drag(e:MouseEvent):void{
 		if (!this.isDragging) return;
@@ -326,6 +361,8 @@ export default class Zoomer{
 
 		currentImg.src = this.sources[newIndex];
 
+		let timeout = window.innerWidth >= 600 ? 80 : 0;
+
 		setTimeout(() => {
 			this.wrapper.scrollLeft = this.slideWidth;
 			prevImg.src = this.sources[prevIndex];
@@ -335,7 +372,7 @@ export default class Zoomer{
 			this.wrapper.querySelectorAll('img').forEach((img:HTMLImageElement) => {
 				img.className = '';
 			})
-		}, 80);
+		}, timeout);
 		
 		
 	}
