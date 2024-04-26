@@ -3,8 +3,10 @@ import Lazy from 'vanilla-lazyload';
 import mustache from 'mustache';
 import { template } from './lib/template';
 import { IDiapasone } from './lib/interfaces';
-import TinyMasonry from './lib/masonry';
-import IMask from 'imask';
+// import TinyMasonry from './lib/masonry';
+// import IMask from 'imask';
+import Swiper from 'swiper';
+import {Navigation, Pagination} from 'swiper/modules'
 import MouseParallax, { IParallaxOptions } from './lib/mouseparallax';
 import TinyParallax from './lib/tinyparallax';
 import Zoomer, { IZoomerOptions } from './lib/zoomer';
@@ -12,6 +14,8 @@ import Zoomer, { IZoomerOptions } from './lib/zoomer';
 declare const ymaps:any; // Переменная для хранения Яндекс-карт
 declare const YT:any; //Переменная для хранения API Youtube
 let player:any;
+
+Swiper.use( [ Navigation, Pagination ] );
 
 /**
  * Инициализация
@@ -91,29 +95,60 @@ document.addEventListener('DOMContentLoaded', function() {
 		})
 
 	// Плиточное расположение галереи
-	new TinyMasonry({
-		containerSelector: '.masonry-container',
-		itemSelector: '.gallery-image',
-		columnCount: 4,
-		breakpoints: [
-			{
-				maxWidth: 2000,
-				columnCount: 4
+	// new TinyMasonry({
+	// 	containerSelector: '.masonry-container',
+	// 	itemSelector: '.gallery-image',
+	// 	columnCount: 4,
+	// 	breakpoints: [
+	// 		{
+	// 			maxWidth: 2000,
+	// 			columnCount: 4
+	// 		},
+	// 		{
+	// 			maxWidth: 1600,
+	// 			columnCount: 3
+	// 		},
+	// 		{
+	// 			maxWidth: 900,
+	// 			columnCount: 2
+	// 		},
+	// 		{
+	// 			maxWidth: 400,
+	// 			columnCount: 1
+	// 		},
+	// 	]
+	// })
+	let swiper = new Swiper('#gallery-slider', {
+		spaceBetween: 20,
+		loop: true,
+		pagination: {
+			type: 'bullets',
+			el: '#gallery-pagination',
+			dynamicMainBullets: 5,
+			dynamicBullets: true
+		},
+		navigation: {
+			prevEl: '.prev',
+			nextEl: '.next'
+		},
+		breakpoints: {
+			400: {
+				slidesPerView: 1
 			},
-			{
-				maxWidth: 1600,
-				columnCount: 3
+			800: {
+				slidesPerView: 2
 			},
-			{
-				maxWidth: 900,
-				columnCount: 2
+			1400: {
+				slidesPerView: 3
 			},
-			{
-				maxWidth: 400,
-				columnCount: 1
+			1800: {
+				slidesPerView: 4
 			},
-		]
-	})
+			2200: {
+				slidesPerView: 5
+			}
+		}
+	});
 
 	// Инициализация карты
 	loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU", () => {

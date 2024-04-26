@@ -332,6 +332,9 @@ main{
 
 				& h3{
 					border-bottom: 1px solid #ccc;
+					display: flex;
+					align-items: center;
+					padding-bottom: 6px;
 
 					&:before{
 						content: '';
@@ -339,6 +342,14 @@ main{
 						margin-right: 6px;
 						background-image: var(--icon);
 						background-size: cover;
+						
+						@media(max-width: $small){
+							padding-left: 40px;
+							aspect-ratio: 1 / 1;
+							background-size: contain;
+							background-position: center center;
+							background-repeat: no-repeat;
+						}
 					}
 				}
 
@@ -792,6 +803,60 @@ main{
 						z-index: 2;
 						box-shadow: 0 0 0 2px $accent;
 						border-color: $accent;
+					}
+				}
+			}
+
+			& .swiper-slide{
+
+				height: unset;
+
+				& img{
+					width: 100%;
+					aspect-ratio: 1 / 1;
+					object-fit: cover;
+					object-position: top center;
+					cursor: pointer;
+				}
+			}
+
+			.swiper{
+				position: relative;
+
+				@mixin prevNext{
+					z-index: 2;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 60px;
+					height: 60px;
+					text-align: center;
+					line-height: 60px;
+					background-color: rgba(black, .7);
+					color: #fff;
+					font-size: 42px;
+				}
+
+				& .prev{
+					@include prevNext();
+					left: 0;
+				}
+
+				& .next{
+					@include prevNext();
+					right: 0;
+				}
+			}
+
+			& .swiper-pagination{
+				position: relative;
+				bottom: unset;
+				margin-top: 20px;
+
+				&-bullet{
+
+					&-active{
+						background-color: $accent;
 					}
 				}
 			}

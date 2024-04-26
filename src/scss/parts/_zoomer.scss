@@ -1,5 +1,5 @@
 $transition: .4s;
-$iconSize: 40px;
+$iconSize: 60px;
 
 @mixin button{
 	display: block;
@@ -15,7 +15,7 @@ $iconSize: 40px;
 	cursor: pointer;
 	user-select: none;
 	z-index: 2;
-	font-size: 16px;
+	font-size: 46px;
 
 	&:hover{
 		background-color: rgba(black, .4);
@@ -75,21 +75,18 @@ $iconSize: 40px;
 		top: 0;
 		right: 0;
 		@include button();
-		font-size: 40px;
 	}
 
 	& .zoomer-prev{
 		@include button();
 		left: 0;
 		top: 50%;
-		font-size: 20px;
 		transform: translateY(-50%);
 	}
 	& .zoomer-next{
 		@include button;
 		right: 0;
 		top: 50%;
-		font-size: 20px;
 		transform: translateY(-50%);
 	}
 	&.open{

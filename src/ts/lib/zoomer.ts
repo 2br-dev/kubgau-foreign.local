@@ -134,11 +134,11 @@ export default class Zoomer{
 		closeBtn.addEventListener('click', this.close.bind(this));
 		let nextBtn = document.createElement('span');
 		nextBtn.className = 'zoomer-next';
-		nextBtn.textContent = '\u276F'; // >
+		nextBtn.textContent = '›'; // > 
 		nextBtn.addEventListener('click', this.next.bind(this));
 		let prevBtn = document.createElement('span');
 		prevBtn.className = 'zoomer-prev';
-		prevBtn.textContent = '\u276E'; // <
+		prevBtn.textContent = '‹'; // <
 		prevBtn.addEventListener('click', this.prev.bind(this));
 		let prevWrapper = document.createElement('div');
 		prevWrapper.className = 'zoomer-prev-wrapper';
