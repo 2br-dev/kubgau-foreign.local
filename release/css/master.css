@@ -6756,13 +6756,20 @@ body .bttn, body .bttn-outline, body .bttn-large, body main section#about #map-3
     background-color: #FF8001;
     border-radius: 2em;
     color: #fff;
-    line-height: 2em;
     display: inline-block;
     padding: 0 1em;
     transition: background-color .2s;
     border: 0;
     cursor: pointer;
     font-family: 'Cygre', sans-serif;
+    line-height: 2em;
+}
+
+@media (max-width: 400px) {
+    body .bttn, body .bttn-outline, body .bttn-large, body main section#about #map-3d .bttn-youtube, main section#about #map-3d body .bttn-youtube, body .bttn-flat {
+        line-height: 1.7em;
+        padding-bottom: .3em;
+    }
 }
 
 body .bttn:hover, body .bttn-outline:hover, body .bttn-large:hover, body main section#about #map-3d .bttn-youtube:hover, main section#about #map-3d body .bttn-youtube:hover, body .bttn-flat:hover {
@@ -7107,30 +7114,38 @@ main section#hero .hero-content {
     padding: 4vmax 0;
 }
 
-main section#hero .intro {
+main section#hero h1 {
     font-size: clamp(21px, 2vw, 52px);
     line-height: 1.2em;
     font-weight: bold;
 }
 
-main section#hero h1 {
+main section#hero h1.new-intro {
+    font-size: clamp(21px, 2vw, 52px);
+    display: none;
+}
+
+main section#hero .counter-wrapper {
     display: inline-flex;
 }
 
-main section#hero h1 .counter {
+main section#hero .counter-wrapper .counter {
     display: inline-flex;
     flex-direction: column;
     text-align: center;
+    font-size: clamp(42px, 5vw, 133px);
+    font-weight: bold;
+    line-height: 1em;
+    margin-bottom: .5em;
 }
 
 @media (max-width: 1200px) {
-    main section#hero h1 .counter {
+    main section#hero .counter-wrapper .counter {
         font-size: clamp(50px, 12vw, 90px);
-        line-height: 1em;
     }
 }
 
-main section#hero h1 .counter .text {
+main section#hero .counter-wrapper .counter .text {
     font-size: clamp(16px, 2vw, 18px);
     line-height: 1em;
     font-weight: normal;
@@ -7202,8 +7217,29 @@ main section#about .about-intro {
     color: #777;
 }
 
+main section#about .col .about-card .icon {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 1200px) {
+    main section#about .col .about-card .icon h3 {
+        display: none;
+    }
+}
+
+main section#about .col .about-card .icon img {
+    margin-right: 20px;
+}
+
 main section#about .col .about-card .content {
     padding-left: clamp(0px, 3vw, 80px);
+}
+
+@media (max-width: 1200px) {
+    main section#about .col .about-card .content h3 {
+        display: none;
+    }
 }
 
 @media (max-width: 850px) {
@@ -7666,7 +7702,7 @@ main section#events-calendar .calendar-date .left-content, main section#events-c
 }
 
 main section#events-calendar .calendar-date:hover .event-content {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(51, 51, 51, 0.07), 0 20px 40px rgba(51, 51, 51, 0.05), 0 40px 80px rgba(51, 51, 51, 0.05);
 }
 
 main section#events-calendar .calendar-date:hover .date-bullet {
@@ -7964,7 +8000,7 @@ main section#contacts .contacts-content .contacts .contact-card .contact-intro .
 }
 
 main section#contacts .contacts-content .contacts .contact-card .contact-intro .contact-image img {
-    width: 100%;
+    max-width: 100%;
 }
 
 main section#contacts .contacts-content .contacts .contact-card .contact-intro .contact-data .last-name, main section#contacts .contacts-content .contacts .contact-card .contact-intro .contact-data .full-name {
@@ -8019,9 +8055,26 @@ main section#contacts .contacts-content .contacts .contact-card .contacts-list u
     margin: 0;
 }
 
+main section#contacts .contacts-content .contacts .contact-card .contacts-list ul a {
+    display: flex;
+    align-items: baseline;
+}
+
+@media (max-width: 1200px) {
+    main section#contacts .contacts-content .contacts .contact-card .contacts-list ul a {
+        padding: 6px 0;
+    }
+}
+
 main section#contacts .contacts-content .contacts .contact-card .contacts-list .phones {
     width: calc(35% + 20px);
     flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    main section#contacts .contacts-content .contacts .contact-card .contacts-list .phones {
+        width: 100%;
+    }
 }
 
 main section#contacts .contacts-content .contacts .contact-card .contacts-list .phones li {

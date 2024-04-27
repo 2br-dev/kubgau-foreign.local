@@ -38,8 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Modal
 	M.Modal.init(document.querySelectorAll('.modal'), {
-		onOpenStart: () => {
-			player.playVideo();
+		onOpenStart: (el:HTMLElement) => {
+			if (el.id === 'video-preview'){
+				player.playVideo();
+			}
 		},
 		onCloseEnd: () => {
 			player.stopVideo();
@@ -273,9 +275,19 @@ function scrollTo(e:JQuery.ClickEvent){
  */
 function startCounter(){
 	let currentDate = new Date(); // Текущая дата
-	let endDate = new Date("July 30, 2024"); // Целевая дата
+	let endDate = new Date("July 20, 2024"); // Целевая дата
+
 	// Расчитываем разницу между текущей и целевой датой
-	var timeDiff = Math.abs(endDate.getTime() - currentDate.getTime());
+	var timeDiff = (endDate.getTime() - currentDate.getTime());
+
+	if(timeDiff <= 0){
+		// Скрываем счётчик, и отображаем уведомление о том, что приём начался
+		$('.intro, .counter').hide();
+		$('.new-intro').show();
+		$('#in-touch').hide();
+		$('#hero .bttn-large').hide();
+	}
+
 	// Вычисляем количество дней, часов, минут и секунд до достижения цели
 	var days = Math.floor(timeDiff / (1000 * 3600 * 24));
 	var hours = Math.floor((timeDiff % (1000 * 3600 * 24)) / (1000 * 3600));

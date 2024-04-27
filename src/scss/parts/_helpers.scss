@@ -21,7 +21,6 @@ body{
 		background-color: $accent;
 		border-radius: 2em;
 		color: #fff;
-		line-height: 2em;
 		display: inline-block;
 		padding: 0 1em;
 		transition: background-color .2s;
@@ -29,6 +28,13 @@ body{
 		cursor: pointer;
 		font-family: 'Cygre', sans-serif;
 
+		line-height: 2em;
+		
+		@media(max-width: $extra-small){
+			line-height: 1.7em;
+			padding-bottom: .3em;
+		}
+		
 		&:hover{
 			background-color: lighten($accent, 15);
 		}

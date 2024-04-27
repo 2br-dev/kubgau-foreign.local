@@ -23,13 +23,18 @@ main{
 				padding: 4vmax 0;
 			}
 
-			& .intro{
+			& h1{
 				font-size: clamp(21px, 2vw, 52px);
 				line-height: 1.2em;
 				font-weight: bold;
+				
+				&.new-intro{
+					font-size: clamp(21px, 2vw, 52px);
+					display: none;
+				}
 			}
 
-			& h1{
+			& .counter-wrapper{
 
 				display: inline-flex;
 
@@ -37,10 +42,13 @@ main{
 					display: inline-flex;
 					flex-direction: column;
 					text-align: center;
+					font-size: clamp(42px, 5vw, 133px);
+					font-weight: bold;
+					line-height: 1em;
+					margin-bottom: .5em;
 
 					@media(max-width: $large){
 						font-size: clamp(50px, 12vw, 90px);
-						line-height: 1em;
 					}
 
 					& .text{
@@ -123,8 +131,31 @@ main{
 
 				& .about-card{
 
+					& .icon{
+						display: flex;
+						align-items: center;
+
+						@media(min-width: $large){
+
+							& h3{
+								display: none;
+							}
+						}
+
+						& img{
+							margin-right: $gutter-width;
+						}
+					}
+
 					& .content{
 						padding-left: clamp(0px, 3vw, 80px);
+
+						@media(max-width: $large){
+
+							& h3{
+								display: none;
+							}
+						}
 
 						@media(max-width: $medium){
 							padding-left: 0;
@@ -575,7 +606,7 @@ main{
 				&:hover {
 
 					& .event-content{
-						box-shadow: 0 2px 6px rgba(black, .4), 0 4px 12px rgba(black, .2);
+						box-shadow: 0 10px 20px rgba(#333, .07), 0 20px 40px rgba(#333, .05%), 0 40px 80px rgba(#333, .05%);
 					}
 
 					& .date-bullet{
@@ -906,7 +937,7 @@ main{
 								flex-shrink: 0;
 	
 								& img{
-									width: 100%;
+									max-width: 100%;
 								}
 							}
 	
@@ -962,6 +993,15 @@ main{
 
 							& ul{
 								margin: 0;
+
+								& a{
+									display: flex;
+									align-items: baseline;
+
+									@media(max-width: $large){
+										padding: 6px 0;
+									}
+								}
 							}
 
 	
@@ -969,6 +1009,10 @@ main{
 
 								width: calc(35% + #{$gutter-width});
 								flex-shrink: 0;
+
+								@media(max-width: $small){
+									width: 100%;
+								}
 
 								& li{
 									white-space: nowrap;
